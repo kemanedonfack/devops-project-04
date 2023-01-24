@@ -55,7 +55,7 @@ spec:
           - name: DB_PASSWORD
             value: kemane
           - name: APP_PORT
-            value: {{ .Values.service.port }}
+            value: '{{ .Values.service.port }}'
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
