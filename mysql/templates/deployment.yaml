@@ -37,17 +37,19 @@ spec:
             - name: http
               containerPort: 3306
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
           env:
           - name: MYSQL_ROOT_PASSWORD
             value: kemane
+          - name: MYSQL_DATABASE
+            value: db_zencaisse
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
