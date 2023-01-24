@@ -1,5 +1,5 @@
 helm install mysqldb mysql
 sleep 5
 helm install caisse backend
-sleep 15
+sleep 5
 kubectl get all
